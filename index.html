@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1.0">
+    <title>About • Daltyn</title>
+    <!-- Class 12 | Step 1: a typeface I choose-->
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.google.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <!-- Class 15 | Step 1: JavaScript file -->
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+    <!-- Lab 12 | Task 1: Current page-->
+    <nav>
+        <ul>
+            <li>
+                <a href="index.html" class="current">Home</a>
+            </li>
+            <li>
+                <a href="projects.html">Projects</a>
+            </li>
+            <li>
+                <a href="gallery.html">Gallery</a>
+            </li>
+            <li>
+                <a href="contact.html">Contact Me</a>
+            </li>
+            <!-- Class 15 Step 3 the time button -->
+            <li><button id="toggle-theme" type="button"></button></li>
+        </ul>
+    </nav>
+
+    <!-- Class 11 | Step 2: The Page -->
+    <header>
+        <!--Class 12 | Step 3: an image-->
+        <img src="./assets/art/photography/me.avif" alt="an image of myself" class="art-left" class="art-left">
+        <!-- Lab 12 · Task 1: group the text so it stacks beside the photo -->
+        <div class="content">
+            <h1>Daltyn Landas</h1>
+            <p>Computer Science student at Le Moyne College.</p>
+            <!-- Lab 17 | Task 3: something I can't see -->
+            <h6>Release Version 1.0.0 | 11/4/2026</h6>
+        </div>
+        <label class="spritesheet_container">
+            <input type="checkbox" class="pixel-art-right-toggle">
+            <div class="pixel-art-right" role="img" aria-label="Animated Graphic">
+                <img src="./assets/animations/default_spritesheet.avif" alt="A small fellow waving."
+                    class="sprite-right-only">
+            </div>
+        </label>
+    </header>
+    <main>
+        <h2>About</h2>
+        <section>
+            <!--Lab 11 | Task 1: Write a paragraph-->
+            <p>
+                Welcome, I construct code and philosophical fiction.
+                I enjoy making uncomfortable thought experiments to reveal
+                subjective truths through various plots and plans.
+
+                Stop-motion animation and two-dimensional art
+                helps display the tedium of creativity contrasting
+                the humanity lost in the brevity of reality.
+                Audiobooks and novellas assist in imagination,
+                originality brings controversy and education,
+                thrill brings entertainment imminent in society.
+
+                The space for boredom breeds original thought.
+                When allowed to linger in nowhere and nothing,
+                enough experience the mind fights battles.
+                Comfortable entertainment breeds easy consumption,
+                connotative afterthought warps society toward quiet perfection.
+
+                Does what you observe reflect yourself, or do you reflect what you observe?
+            </p>
+        </section>
+
+        <!--Lab 11 | Task 2: third section-->
+        <section>
+            <h2>Skills</h2>
+            <ul>
+                <li>Doing things before they're asked, or branching tasks from distractions.</li>
+                <li>Tying knots in everything.</li>
+                <li>Figuring out ways to complicate easy things, and simplify complex things.</li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <a href="https://github.com/daltyn006/" target="_blank" rel="noopener noreferrer">
+            <!-- Class 15 | Step 2: The year writen by JavaScript -->
+            &copy; <span id="year"></span> Daltyn Landas.
+        </a>
+    </footer>
+</body>
+
+</html>

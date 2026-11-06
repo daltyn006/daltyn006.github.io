@@ -1,0 +1,497 @@
+/* 1. VARIABLES & THEMES */
+
+
+/* Structure: 
+:root[theme="theme"] {
+
+    Main Static
+    --background: 
+    --text: 
+    --text-muted:
+    --title-name:
+    --subtitle:
+    --section-title:
+    --accent: 
+    --border:
+
+    Interaction Based
+    --error: 
+    --link: 
+    --link-hover: 
+    --button-text:
+    --button-hover: o
+    --button-border:
+
+    Footer
+    --footer-link: rosybrown;
+    --footer-link-hover: wheat;
+}
+ */
+
+/* Class 15 | Step 3: a button that changes page theme  */
+:root,
+:root[theme="light"] {
+    /* Inspired by Bruce Springsteen*/
+    --background: snow;
+    --text: teal;
+    --text-muted: lightslategray;
+    --title-name: darkblue;
+    --subtitle: slategray;
+    --section-title: blue;
+    --accent: mistyrose;
+    --border: burlywood;
+
+    --error: coral;
+    --link: tan;
+    --link-hover: goldenrod;
+    --button-text: darkcyan;
+    --button-hover: linen;
+    --button-border: blanchedalmond;
+
+    --footer-link: lightsteelblue;
+    --footer-link-hover: black;
+}
+
+/* Still default for cool users */
+@media (prefers-color-scheme: dark) {
+    :root:not([theme]) {
+        --background: black;
+        --text: Bisque;
+        --text-muted: rosybrown;
+        --title-name: goldenrod;
+        --subtitle: sandybrown;
+        --section-title: maroon;
+        --accent: darkgoldenrod;
+        --border: saddlebrown;
+
+        --error: coral;
+        --link: cornsilk;
+        --link-hover: tan;
+        --button-text: antiquewhite;
+        --button-hover: gainsboro;
+        --button-border: blanchedalmond;
+
+        --footer-link: khaki;
+        --footer-link-hover: darkkhaki;
+    }
+}
+
+/* Explicit Manual Dark Theme for users that don't know it exists */
+:root[theme="dark"] {
+    --background: black;
+    --text: Bisque;
+    --text-muted: rosybrown;
+    --title-name: goldenrod;
+    --subtitle: sandybrown;
+    --section-title: maroon;
+    --accent: darkgoldenrod;
+    --border: saddlebrown;
+
+    --error: coral;
+    --link: cornsilk;
+    --link-hover: tan;
+    --button-text: antiquewhite;
+    --button-hover: gainsboro;
+    --button-border: blanchedalmond;
+
+    --footer-link: khaki;
+    --footer-link-hover: darkkhaki;
+}
+
+/* cool green cyber theme */
+:root[theme="cyber"] {
+    --background: black;
+    --text: forestgreen;
+    --text-muted: green;
+    --title-name: darkgreen;
+    --subtitle: limegreen;
+    --section-title: springgreen;
+    --accent: olive;
+    --border: olivedrab;
+
+    --error: coral;
+    --link: seagreen;
+    --link-hover: mediumseagreen;
+    --button-text: lightgreen;
+    --button-hover: darkseagreen;
+    --button-border: lime;
+
+    --footer-link: mediumspringgreen;
+    --footer-link-hover: yellowgreen;
+}
+
+/* A box that gruvs */
+:root[theme="gruvbox"] {
+    --background: #282828;
+    --text: #ebdbb2;
+    --text-muted: #a89984;
+    --title-name: #fabd2f;
+    --subtitle: #d79921;
+    --section-title: #fb4934;
+    --accent: #b8bb26;
+    --border: #7c6f64;
+
+    --error: #cc241d;
+    --link: #83a598;
+    --link-hover: #b8bb26;
+    --button-text: #fabd2f;
+    --button-hover: #b8bb26;
+    --button-border: #7c6f64;
+
+    --footer-link: #d5c4a1;
+    --footer-link-hover: #fbf1c7;
+}
+
+/* Class 16 | Step 3: padding counts inside width not on top of it */
+* {
+    box-sizing: border-box;
+}
+/* Lab 16 | Task 2: an error code */
+#form-status.error { 
+    color: var(--error)
+}
+
+body {
+    font-family: Calibri, "Trebuchet MS", sans-serif;
+    font-size: small;
+    line-height: 2;
+    color: var(--text);
+    background: var(--background);
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+section {
+    margin-bottom: 3rem;
+}
+
+h2 {
+    font-size: medium;
+    line-height: 3rem;
+    color: var(--section-title);
+    border-bottom: 1px solid var(--border);
+    margin-top: 2.5rem;
+    padding-bottom: 0.5rem;
+}
+
+ul {
+    list-style: none;
+    padding-left: 1rem;
+}
+
+li a {
+    display: block;
+    padding: 0;
+    color: var(--link);
+    text-decoration: none;
+    transition: color 0.2s ease, transform 0.2s ease;
+}
+
+li a:hover {
+    color: var(--link-hover);
+    text-decoration: none;
+}
+
+button {
+    color: var(--button-text);
+    background-color: var(--background);
+    border-color: var(--button-border);
+}
+
+button:hover {
+    color: var(--link-hover);
+    background-color: var(--background);
+    border-color: var(--button-border);
+}
+
+.hidden {
+    /* Important is needed to override the current structure */
+    display: none !important;
+}
+
+
+header {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.header-text {
+    flex: 1;
+}
+
+header h1 {
+    font-size: large;
+    color: var(--title-name);
+    margin: 0;
+}
+
+header h3 {
+    font-size: smaller;
+    color: var(--subtitle);
+    margin: 0;
+}
+
+header p {
+    font-size: small;
+    color: var(--text-muted);
+    margin-top: 0;
+    border-bottom: 1px solid var(--border);
+}
+
+.align-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 50%;
+}
+
+.art-left {
+    width: auto;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 50%;
+    flex-shrink: 1;
+}
+
+/* Lab 14 | Task 1: the nav stacks for narrow */
+nav ul {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 2rem;
+}
+
+/*end nav UL switch*/
+
+/* Lab 13 · Task 4: page selector */
+nav a.current {
+    display: inline-flex;
+    border-bottom: 1px solid var(--border);
+    margin: 0;
+    padding: 0;
+}
+
+/* end page selector */
+
+/* dropdown */
+.dropdown {
+    color: var(--text);
+    background: none;
+    border: none;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.dropdown:hover {
+    color: var(--link-hover);
+    text-decoration: none;
+}
+
+/* end dropdown */
+
+
+/* Class 14 | Step 2: put the cards in a row */
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    width: 100%;
+}
+
+.card {
+    flex: 1 1 220px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1.5rem;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+}
+
+/* Lab 14 | Task 6: one layout of my own */
+.card img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    display: block;
+    border-radius: 4px;
+}
+
+.card a {
+    color: var(--link);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.card a:hover {
+    color: var(--link-hover);
+    text-decoration: underline;
+}
+
+.card p {
+    color: var(--text);
+    margin: 0.5rem 0 0 0;
+    line-height: 1.6;
+}
+
+.card h2 {
+    margin-top: -1rem;
+    margin-bottom: 1rem;
+    margin-right: 1rem;
+    padding: 1rem;
+    background: var(--background);
+}
+/* end cards*/
+
+/* Class 16 | Step something: the form */
+form label {
+    display: block;
+    font-weight: bolder;
+    margin: 1rem;
+    margin-bottom: 0.25rem;
+    padding: 1rem;
+}
+
+form input,
+form textarea {
+    font: inherit;
+    width: 80%;
+    padding: 0.5rem;
+    background-color: var(--background);
+    color: var(--accent);
+    border: 1px solid var(--border);
+}
+
+form input:focus,
+form textarea:focus {
+    outline: 2px solid var(--accent);
+    outline-offset: 1px;
+}
+
+form button {
+    font: inherit;
+    font-weight: bold;
+    color: var(--button-text);
+    background-color: var(--background);
+    border-color: var(--button-border);
+    border-radius: 6px;
+    padding: 0.5rem 0.5rem;
+    cursor: pointer;
+}
+
+form button:hover {
+    font: inherit;
+    font-weight: bolder;
+    color: var(--button-hover);
+    background-color: var(--background);
+    border-color: var(--button-border);
+    border-radius: 6px;
+    padding: 0.5rem 0.5rem;
+    cursor: pointer;
+}
+
+#form-status {
+    font: inherit;
+    font-weight: bold;
+    color: var(--text);
+}
+
+
+/* Sprite sheet animation rules */
+.spritesheet_container {
+    display: inline-block;
+}
+
+.pixel-art-right-toggle {
+    display: none;
+}
+
+.pixel-art-right {
+    width: 25px;
+    height: 50px;
+    background-image: url("./assets/animations/default_spritesheet.png");
+    background-size: 800px 50px;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    flex-shrink: 0;
+    image-rendering: pixelated;
+    image-rendering: crisp-edges;
+    animation: playArt 2s steps(32) infinite;
+    animation-play-state: paused;
+}
+
+.pixel-art-right-toggle:checked~.pixel-art-right {
+    animation-play-state: running;
+}
+
+.sprite-right-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+@keyframes playArt {
+    from {
+        background-position: 0px 0px;
+    }
+
+    to {
+        background-position: -800px 0px;
+    }
+}
+
+/*end sprite sheet section*/
+
+
+/* Lab 14 | Task 4: footer stacks on narrow screens */
+footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    font-size: small;
+    border-top: 1px solid var(--border);
+}
+
+footer a {
+    color: var(--footer-link);
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: var(--footer-link-hover);
+}
+
+/* 9. MEDIA QUERIES */
+
+@media (min-width: 40rem) {
+    nav ul {
+        flex-direction: row;
+        gap: 1.5rem;
+    }
+
+    .cards {
+        flex-direction: row;
+        padding: 1px;
+    }
+
+    /* Lab 14 | Task 4: footer stacks on narrow screens */
+    footer {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
